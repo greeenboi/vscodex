@@ -18,9 +18,11 @@ interface Icons {
 
 const icons: Icons = {
   tsx: react,
+  jsx: react,
   css: css,
   svg: svg,
   png: image,
+  webp:image,
   icns: image,
   ico: image,
   gif: image,

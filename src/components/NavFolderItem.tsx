@@ -85,7 +85,9 @@ export default function NavFolderItem({ file }: Props) {
                     ></input>
                 </div>
             ) : null }
-            <NavFiles visible={unfold} files={files}/>
+            <div className=" pl-4 ml-4 border-l border-white">
+                <NavFiles visible={unfold} files={files} />
+            </div>
         </div>
     )
 }

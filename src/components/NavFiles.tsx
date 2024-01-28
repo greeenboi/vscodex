@@ -9,12 +9,12 @@ interface Props {
 }
 
 export default function NavFiles({ files, visible} : Props) {
-    const {setSelect, selected} = useSource();
+    const {setSelect, selected, addOpenedFile} = useSource();
     const onShow = async (e: React.MouseEvent<HTMLDivElement, MouseEvent>, file: IFile) =>{
         e.stopPropagation();
         if(file.kind === 'file'){
             setSelect(file.id);
-
+            addOpenedFile(file.id);
         }
     }
 
