@@ -1,0 +1,39 @@
+// Prevents additional console window on Windows in release, DO NOT REMOVE!!
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
+mod fc;
+
+// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+#[tauri::command]
+fn greet(name: &str) -> String {
+    format!("Hello, {}! You've been greeted from Rust!", name)
+}
+
+#[tauri::command]
+fn open_folder(folder_path: &str) -> String {
+    let files_str: String = fc::read_directory(folder_path);
+    files_str
+}
+
+#[tauri::command]
+fn get_file_content(file_path: &str) -> String {
+    let content: String = fc::read_file(file_path);
+    content
+}
+
+
+#[tauri::command]
+fn write_file(file_path: &str, content: &str) -> String {
+    fc::write_file(file_path, content);
+    String::from("OK")
+    
+}
+
+fn main() {
+    tauri::Builder::default()
+        .invoke_handler(tauri::generate_handler![greet, open_folder, get_file_content, write_file])
+        .run(tauri::generate_context!())
+        .expect("error while running tauri application");
+}
+
+
