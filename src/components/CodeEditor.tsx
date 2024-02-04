@@ -9,6 +9,15 @@ import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import { json } from "@codemirror/lang-json";
 import { rust } from "@codemirror/lang-rust";
+import { python } from "@codemirror/lang-python";
+import { sql } from "@codemirror/lang-sql";
+import { yaml } from "@codemirror/lang-yaml";
+import { angular } from "@codemirror/lang-angular";
+import { vue } from "@codemirror/lang-vue";
+import { sass } from "@codemirror/lang-sass";
+import { xml } from "@codemirror/lang-xml";
+import { cpp } from "@codemirror/lang-cpp";
+import { java } from "@codemirror/lang-java";
 import { solarizedDark } from 'cm6-theme-solarized-dark'
 
 
@@ -40,7 +49,7 @@ export default function CodeEditor({ id, active } : Props) {
                 doc: content,
                 extensions: [
                     basicSetup,
-                    javascript(), markdown(), html(), css(), json(), rust(),
+                    javascript(), markdown(), html(), css(), json(), rust(), python(), sql(), yaml(), angular(), vue(), sass(), xml(), cpp(), java(),
                     solarizedDark
                 ],
                 parent: element
