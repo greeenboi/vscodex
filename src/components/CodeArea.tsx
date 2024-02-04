@@ -27,7 +27,7 @@ export default function CodeArea (){
             <div ref={scrollRef} className="code-tab-items flex items-center border-b border-stone-800 divide-x divide-stone-800 overflow-x-auto">
                 {opened.map( item => {
                     const file = getFileObject(item) as IFile;
-                    const active = item === selected ? 'bg-darken text-gray-400': '';
+                    const active = item === selected ? 'bg-secondary text-gray-400': '';
 
                     return (
                         <div 
@@ -52,6 +52,11 @@ export default function CodeArea (){
                 }
                 )}
             </div>
+            
+                <div className="w-full h-full flex flex-col items-center justify-center text-[#20A9A3] font-mono font-medium text-3xl">
+                    Welcome!
+                </div>
+
         </div>
     )
 }

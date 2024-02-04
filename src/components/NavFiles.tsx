@@ -29,7 +29,7 @@ export default function NavFiles({ files, visible} : Props) {
                     )
                 }
                 return(
-                    <div onClick={(e) => onShow(e, file)} key={file.id} className={`source-item ${isSelected ? 'source-item-active' : ''} flex items-center gap-2 px-4 py-0.5 text-gray-500 hover:text-gray-300 cursor-pointer active:border border-gray-600 hover:bg-gray-500 my-1 ease-in-out transition-all `}>
+                    <div onClick={(e) => onShow(e, file)} key={file.id} className={`source-item ${isSelected ? 'source-item-active' : ''} flex items-center gap-2 px-4 py-0.5 text-[#AEAEAE] hover:text-gray-300 cursor-pointer active:border border-gray-600 hover:bg-gray-500 my-1 ease-in-out transition-all `}>
                         <FileIcon name={file.name} />
                         <span className="text-sm">{file.name}</span>
                     </div>

@@ -25,13 +25,13 @@ export default function Sidebar() {
     }
 
     return (
-        <aside id="sidebar" className="w-60 shrink-0 h-full bg-darken">
+        <aside id="sidebar" className="w-60 shrink-0 h-full bg-secondary border-r border-r-white overflow-x-auto">
             <div className="sidebar-header flex flex-col items-center justify-between my-2 p-4 py-2.5">
                 <button onClick={loadFile} className="project-explorer flex flex-row justify-between items-center">
                     File Explorer
                     <i className="ri-folder-open-line hover:bg-gray-700 rounded-lg transition-all ease-in-out duration-200 p-1"></i>
                 </button>
-                <span className="project-name whitespace-nowrap text-gray-400 text-xs my-2">{projectName}</span>
+                <span className="project-name whitespace-nowrap text-[#B07EC4] text-xs my-2 overflow-x-auto">{projectName}</span>
 
                 <div className="code-structure">
                     <NavFiles files={files} visible={true} />

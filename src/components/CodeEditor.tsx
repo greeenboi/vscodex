@@ -18,7 +18,7 @@ import { sass } from "@codemirror/lang-sass";
 import { xml } from "@codemirror/lang-xml";
 import { cpp } from "@codemirror/lang-cpp";
 import { java } from "@codemirror/lang-java";
-import { solarizedDark } from 'cm6-theme-solarized-dark'
+import { coolGlow } from 'thememirror';
 
 
 interface Props {
@@ -50,7 +50,7 @@ export default function CodeEditor({ id, active } : Props) {
                 extensions: [
                     basicSetup,
                     javascript(), markdown(), html(), css(), json(), rust(), python(), sql(), yaml(), angular(), vue(), sass(), xml(), cpp(), java(),
-                    solarizedDark
+                    coolGlow
                 ],
                 parent: element
             })

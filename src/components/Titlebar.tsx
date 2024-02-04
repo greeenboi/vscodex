@@ -1,10 +1,17 @@
-import { useState } from "react"
+import {  useState } from "react"
 import { appWindow } from "@tauri-apps/api/window"
 
+interface SettingsDialogProps{
+    isDialogOpen: boolean;
+    setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    posRef: React.MutableRefObject<null>;
+}
 
 
-export default function Titlebar() {
-    const [isScaleUp, setScaleUp] = useState(false)
+export default function Titlebar({isDialogOpen, setDialogOpen, posRef}: SettingsDialogProps) {
+    const [isScaleUp, setScaleUp] = useState(false);
+    ;
+
     const onMinimize = () => {
         appWindow.minimize()
     }
@@ -21,6 +28,9 @@ export default function Titlebar() {
     const onClose = () => {
         appWindow.close()
     }
+
+    
+
     return (
         <div id="titlebar" data-tauri-drag-region>
             <div className="flex items-center gap-1 5 pl-2">
@@ -30,6 +40,9 @@ export default function Titlebar() {
                 </span>
             </div>
             <div className="titlebar-actions">
+                <i ref={posRef} className="titlebar-icon ri-settings-line mx-2" onClick={() => setDialogOpen(!isDialogOpen)}>
+                    
+                </i>
                 <i className="titlebar-icon ri-subtract-line" onClick={onMinimize}></i>
 
                 {
