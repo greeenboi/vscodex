@@ -2,6 +2,7 @@ import { useSource } from "../context/SourceContext";
 import useHorizontalScroll from "../context/useHorizontalScroll";
 import { getFileObject } from "../stores/file";
 import { IFile } from "../types";
+import CodeEditor from "./CodeEditor";
 import FileIcon from "./FileIcon";
 import PreviewImage from "./PreviewImage";
 
@@ -44,8 +45,12 @@ export default function CodeArea (){
             <div className="code-contents">
                 {opened.map(item =>{
                     const file = getFileObject(item) as IFile;
-                    if (isImage(file.name)) return <PreviewImage key={item} path={file.path} active={item === selected} />;
-                })}
+                    if (isImage(file.name)) {
+                        return <PreviewImage key={item} path={file.path} active={item === selected} />;
+                    } 
+                    return <CodeEditor key={item} id={item} active={item === selected} />
+                }
+                )}
             </div>
         </div>
     )

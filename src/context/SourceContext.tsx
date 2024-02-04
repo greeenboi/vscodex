@@ -27,8 +27,9 @@ export const SourceProvider = ({ children }: { children: JSX.Element | JSX.Eleme
     }
 
     const addOpenedFile = useCallback((id: string) => {
+        if(opened.includes(id)) return;
         updateOpenedFiles(prevOpen => ([...prevOpen, id]))
-    }, [])
+    }, [opened])
 
     const deleteOpenedFile = useCallback((id: string) => {
         updateOpenedFiles(prevOpen => (prevOpen.filter(item => item !== id)))
