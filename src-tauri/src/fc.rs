@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-use serde_json::Result;
+// use serde_json::Result;
 use std::fs;
 use std::path::Path;
 
@@ -42,6 +42,7 @@ pub fn read_directory(dir_path: &str) -> String {
         let filename = match path_unwrap.file_name().into_string() {
             Ok(str) => str,
             Err(error) => String::from("ERROR"),
+
         };
 
         let file_path = dir_path.to_owned() + &filename;
