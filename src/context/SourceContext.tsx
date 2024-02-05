@@ -10,10 +10,10 @@ interface ISourceContext {
 
 const SourceContext = createContext<ISourceContext>({
     selected: '',
-    setSelect:(id) => {},
+    setSelect:(id) => {id},
     opened: [],
-    addOpenedFile: (id) => {},
-    deleteOpenedFile: (id) => {},
+    addOpenedFile: (id) => {id},
+    deleteOpenedFile: (id) => {id},
 });
 
 

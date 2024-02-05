@@ -12,12 +12,16 @@ export default function NavFiles({ files, visible} : Props) {
     const {setSelect, selected, addOpenedFile} = useSource();
     const onShow = async (e: React.MouseEvent<HTMLDivElement, MouseEvent>, file: IFile) =>{
         e.stopPropagation();
+        console.log(file.id);
         if(file.kind === 'file'){
             setSelect(file.id);
             addOpenedFile(file.id);
         }
     }
 
+    // const handleDeleteFile = (path: string) => {
+
+    // }
 
     return(
         <div className={`source-codes ${visible ? '' : 'hidden'}`}>
@@ -29,9 +33,12 @@ export default function NavFiles({ files, visible} : Props) {
                     )
                 }
                 return(
-                    <div onClick={(e) => onShow(e, file)} key={file.id} className={`source-item ${isSelected ? 'source-item-active' : ''} flex items-center gap-2 px-4 py-0.5 text-[#AEAEAE] hover:text-gray-300 cursor-pointer active:border border-gray-600 hover:bg-gray-500 my-1 ease-in-out transition-all `}>
-                        <FileIcon name={file.name} />
-                        <span className="text-sm">{file.name}</span>
+                    <div onClick={(e) => onShow(e, file)} key={file.id} className={`w-full source-item ${isSelected ? 'source-item-active' : ''} flex flex-row justify-between items-center px-4 py-0.5 text-[#AEAEAE] hover:text-gray-300 cursor-pointer active:border border-gray-600 hover:bg-gray-500 my-1 ease-in-out transition-all `}>
+                        <div className="flex flex-row gap-1">
+                            <FileIcon name={file.name} />
+                            <span className="text-sm">{file.name}</span>
+                        </div>
+                        {/* <i className="ri-delete-bin-6-line text-gray-500 hover:text-red-700" onClick={}></i> */}
                     </div>
                 )
             })}

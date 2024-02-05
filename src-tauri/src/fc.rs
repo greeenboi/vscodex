@@ -81,20 +81,20 @@ pub fn write_file(path: &str, content: &str) -> String {
     result
 }
 
-pub fn create_directory(path: &str) -> Result<()>{
-    let dir_path = Path::new(path);
-    fs::create_dir(dir_path);
-    Ok(())
-}
+// pub fn create_directory(path: &str) -> Result<()>{
+//     let dir_path = Path::new(path);
+//     fs::create_dir(dir_path);
+//     Ok(())
+// }
 
-pub fn remove_file(path: &str) -> Result<()> {
-    let file_path = Path::new(path);
-    fs::remove_file(file_path);
-    Ok(())
-}
+// pub fn remove_file(path: &str) -> Result<()> {
+//     let file_path = Path::new(path);
+//     fs::remove_file(file_path);
+//     Ok(())
+// }
 
-pub fn remove_folder(path: &str) -> Result<()>{ 
-    let folder_path = Path::new(path);
-    fs::remove_dir_all(folder_path);
-    Ok(())
-}
+// pub fn remove_folder(path: &str) -> Result<()>{ 
+//     let folder_path = Path::new(path);
+//     fs::remove_dir_all(folder_path);
+//     Ok(())
+// }
