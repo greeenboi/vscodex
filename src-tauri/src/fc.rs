@@ -41,7 +41,7 @@ pub fn read_directory(dir_path: &str) -> String {
 
         let filename = match path_unwrap.file_name().into_string() {
             Ok(str) => str,
-            Err(error) => String::from("ERROR"),
+            Err(_error) => String::from("ERROR"),
 
         };
 
